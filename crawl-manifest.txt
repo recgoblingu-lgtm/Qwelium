@@ -1,3 +1,4 @@
 favicon.ico
 index.html
+home.html
 IMG_123.png
