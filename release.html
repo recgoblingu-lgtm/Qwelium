@@ -89,7 +89,7 @@
           </div>
           <p class="price-label">Price</p>
           <p class="price" id="itemPrice">0</p>
-          <div id="loggedOutState"><p class="login-note">You must be logged in locally to buy this item.</p><a class="login-button" href="./index.html?login=1">Log in to continue</a></div>
+          <div id="loggedOutState"><p class="login-note">You must be logged in to buy this item.</p><a class="login-button" href="./auth.html">Log in to continue</a></div>
           <div id="loggedInState" hidden><button class="buy-button" id="buyButton" type="button">Buy</button><p class="status" id="purchaseStatus" role="status"></p></div>
         </div>
       </div>
@@ -108,7 +108,7 @@
     var PRODUCT = { name:'Placeholder Item', image:'./IMG_123.png', price:'0', type:'Item', sales:'0', created:'9/29/2026', description:'This is a placeholder for your next Qwelium item. Replace the image, name, price, and copy in the PRODUCT block below.', buttonLabel:'Buy' };
     (function () {
       var user = localStorage.getItem('qwelium_username');
-      document.getElementById('accountArea').innerHTML = user ? '<span>Welcome, ' + user + '</span><a href="./index.html">Log Out</a>' : '<a href="./index.html">Sign Up</a><a href="./index.html?login=1">Login</a>';
+      document.getElementById('accountArea').innerHTML = user ? '<span>Welcome, ' + user + '</span><a href="./auth.html?logout=1">Log Out</a>' : '<a href="./auth.html">Sign Up</a><a href="./auth.html">Login</a>';
       document.getElementById('loggedOutState').hidden = !!user;
       document.getElementById('loggedInState').hidden = !user;
       document.getElementById('itemName').textContent = PRODUCT.name;
