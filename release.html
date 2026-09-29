@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Item | Qwelium</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <style>
+    /*
+      QUICK EDITS
+      Change the item name, image, price, copy, and button label in the
+      PRODUCT object near the bottom of this file. No other code is required.
+    */
+    :root { --navy:#0c2b5c; --blue:#0074bd; --ink:#1d2939; --line:#d8e0eb; --surface:#fff; --muted:#64748b; --green:#55b92a; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; background:#eef3f8; color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .topbar { min-height:64px; padding:12px 28px; display:flex; align-items:center; gap:28px; background:var(--navy); color:#fff; box-shadow:0 2px 8px rgba(0,0,0,.2); }
+    .brand { display:flex; align-items:center; min-width:180px; }
+    .brand img { width:148px; height:42px; object-fit:contain; object-position:left center; }
+    .nav { display:flex; gap:24px; align-items:center; font-size:15px; font-weight:700; }
+    .nav a:hover { color:#8ed0ff; }
+    .account { margin-left:auto; display:flex; align-items:center; gap:14px; font-size:14px; }
+    .logout { border:1px solid rgba(255,255,255,.6); border-radius:4px; padding:8px 12px; color:#fff; background:transparent; cursor:pointer; font-weight:700; }
+    .logout:hover { background:rgba(255,255,255,.12); }
+    main { max-width:1080px; margin:0 auto; padding:34px 22px 64px; }
+    .crumbs { margin:0 0 18px; color:#38577b; font-size:14px; font-weight:700; }
+    .crumbs a:hover { color:var(--blue); text-decoration:underline; }
+    .release-shell { overflow:hidden; display:grid; grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr); background:#fff; border:1px solid var(--line); border-radius:6px; box-shadow:0 8px 24px rgba(19,42,72,.14); }
+    .product-art { min-height:520px; display:flex; align-items:center; justify-content:center; padding:42px; background:linear-gradient(145deg,#cde9ff,#8cc9f5 48%,#4e9fd5); }
+    .product-art img { display:block; width:100%; max-width:520px; aspect-ratio:1 / 1; object-fit:contain; border-radius:5px; box-shadow:0 12px 24px rgba(12,43,92,.22); background:#0b1c36; }
+    .details { padding:42px 38px; display:flex; flex-direction:column; justify-content:center; }
+    .eyebrow { margin:0 0 10px; color:var(--blue); font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { margin:0 0 12px; color:var(--navy); font-size:clamp(30px,4vw,46px); line-height:1.08; }
+    .description { margin:0 0 24px; color:var(--muted); font-size:17px; line-height:1.55; }
+    .price { margin:0 0 24px; color:var(--ink); font-size:30px; font-weight:800; }
+    .login-note { margin:0 0 16px; padding:12px 14px; border:1px solid #f0d788; border-radius:4px; background:#fff8df; color:#725b11; font-size:14px; line-height:1.4; }
+    .buy-button, .login-button { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:11px 18px; border-radius:4px; border:1px solid #31830e; background:var(--green); color:#fff; font-size:16px; font-weight:800; cursor:pointer; box-shadow:0 2px 0 rgba(0,0,0,.16); }
+    .buy-button:hover, .login-button:hover { background:#68cc35; }
+    .login-button { border-color:#0067a8; background:var(--blue); }
+    .login-button:hover { background:#168bd0; }
+    .buy-button[disabled] { border-color:#aab6c5; background:#c4ccd6; color:#5d6a78; cursor:not-allowed; box-shadow:none; }
+    .status { min-height:22px; margin:14px 0 0; color:#38577b; font-size:14px; }
+    footer { padding:26px 24px 34px; border-top:1px solid var(--line); background:#fff; color:var(--muted); text-align:center; font-size:13px; }
+    .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:18px; margin-bottom:12px; color:#38577b; font-weight:600; }
+    @media (max-width:760px) {
+      .topbar { flex-wrap:wrap; gap:12px 18px; padding:14px 18px; }
+      .brand { min-width:140px; }
+      .nav { order:3; width:100%; justify-content:space-between; gap:8px; font-size:13px; }
+      .account { margin-left:auto; }
+      .release-shell { grid-template-columns:1fr; }
+      .product-art { min-height:320px; padding:28px; }
+      .details { padding:32px 26px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./home.html" aria-label="Qwelium home"><img src="./IMG_123.png" alt="Qwelium"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#">Games</a><a href="./release.html">Catalog</a><a href="#">Create</a><a href="#">Download</a><a href="#">Donate</a>
+    </nav>
+    <div class="account"><span id="welcomeUser">Welcome</span><button class="logout" id="logoutButton" type="button">Log Out</button></div>
+  </header>
+
+  <main>
+    <p class="crumbs"><a href="./home.html">Home</a> / Catalog / New release</p>
+    <section class="release-shell" aria-labelledby="itemName">
+      <div class="product-art"><img id="itemImage" src="./IMG_123.png" alt=""></div>
+      <div class="details">
+        <p class="eyebrow" id="itemEyebrow">New item release</p>
+        <h1 id="itemName">Placeholder Item</h1>
+        <p class="description" id="itemDescription">This is a placeholder for your next Qwelium item. Swap the copy, image, and price in the small config block below.</p>
+        <p class="price" id="itemPrice">$0.00</p>
+        <div id="loggedOutState">
+          <p class="login-note">You need to be logged in locally before you can buy this item.</p>
+          <a class="login-button" href="./index.html?login=1">Log in to continue</a>
+        </div>
+        <div id="loggedInState" hidden>
+          <button class="buy-button" id="buyButton" type="button">Buy item</button>
+          <p class="status" id="purchaseStatus" role="status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-links" aria-label="Footer navigation"><a href="#">About Us</a><a href="#">Jobs</a><a href="#">Blog</a><a href="#">Privacy</a><a href="#">Help</a></nav>
+    Qwelium is an independent game preservation project. Use of this site signifies your acceptance of the Terms and Conditions.
+  </footer>
+
+  <script>
+    // EDIT THIS OBJECT to change the placeholder release.
+    var PRODUCT = {
+      name: 'Placeholder Item',
+      image: './IMG_123.png', // Replace with e.g. './images/my-item.png'
+      price: '$0.00',
+      description: 'This is a placeholder for your next Qwelium item. Swap the copy, image, and price in the small config block below.',
+      buttonLabel: 'Buy item'
+    };
+
+    (function () {
+      var user = localStorage.getItem('qwelium_username');
+      document.getElementById('welcomeUser').textContent = user ? 'Welcome, ' + user : 'Welcome';
+      document.getElementById('loggedOutState').hidden = !!user;
+      document.getElementById('loggedInState').hidden = !user;
+      document.getElementById('itemName').textContent = PRODUCT.name;
+      document.getElementById('itemImage').src = PRODUCT.image;
+      document.getElementById('itemImage').alt = PRODUCT.name;
+      document.getElementById('itemPrice').textContent = PRODUCT.price;
+      document.getElementById('itemDescription').textContent = PRODUCT.description;
+      document.getElementById('buyButton').textContent = PRODUCT.buttonLabel;
+
+      document.getElementById('logoutButton').addEventListener('click', function () {
+        localStorage.removeItem('qwelium_username');
+        window.location.href = './index.html';
+      });
+
+      document.getElementById('buyButton').addEventListener('click', function () {
+        document.getElementById('purchaseStatus').textContent = 'Purchase flow placeholder — connect your real checkout here later.';
+      });
+    }());
+  </script>
+</body>
+</html>
