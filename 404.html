@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found - Qwelium</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <style>
+    :root { --blue:#087fbd; --ink:#555; --page:#e3e3e3; }
+    * { box-sizing:border-box; }
+    html,body { min-height:100%; }
+    body { margin:0; background:var(--page); color:var(--ink); font:14px Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .site-header { height:32px; background:var(--blue); color:#fff; box-shadow:0 1px 3px rgba(0,0,0,.22); }
+    .nav-inner { width:min(100%,1020px); height:32px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:0 10px; }
+    .brand { width:24px; height:28px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+    .brand img { width:76px; height:34px; object-fit:contain; max-width:none; }
+    .nav { display:flex; gap:18px; font-size:12px; white-space:nowrap; }
+    .nav a:hover, .account a:hover { text-decoration:underline; }
+    .search { margin-left:auto; width:220px; height:23px; border:1px solid #c9c9c9; background:#fff; padding:2px 8px; font:12px Arial,sans-serif; }
+    .account { display:flex; gap:10px; margin-left:10px; font-size:12px; white-space:nowrap; }
+    .notice { width:min(100%,1020px); margin:0 auto; height:32px; display:flex; align-items:center; justify-content:center; color:#1882bf; font-weight:700; font-size:13px; background:#eef8fd; border-bottom:1px solid #cfe5ef; }
+    main { width:min(100%,1020px); min-height:calc(100vh - 142px); margin:0 auto; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .not-found { width:min(100%,560px); padding:34px 28px; background:rgba(255,255,255,.82); border:1px solid #d7d7d7; text-align:center; box-shadow:0 1px 2px rgba(0,0,0,.08); }
+    .not-found h1 { margin:0 0 8px; font-size:54px; font-weight:400; color:#444; }
+    .not-found p { margin:0 0 20px; color:#888; }
+    .home-link { display:inline-block; padding:9px 20px; border:1px solid #176e99; border-radius:2px; background:var(--blue); color:#fff; }
+    .home-link:hover { background:#1595d4; }
+    footer { padding:18px 18px 28px; border-top:1px solid #d3d3d3; background:#fff; color:#aaa; text-align:center; font-size:11px; }
+    .footer-links { display:flex; justify-content:center; gap:24px; margin-bottom:12px; color:#999; font-size:14px; }
+    .footer-links a:hover { color:#2480ad; text-decoration:underline; }
+    @media (max-width:700px) { .nav-inner { gap:9px; padding:0 8px; } .nav { gap:9px; font-size:11px; } .search { width:120px; } .account { display:none; } }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="nav-inner"><a class="brand" href="./home.html" aria-label="Qwelium home"><img src="./logos/qwelium_logo_transparent.png" alt="Qwelium"></a><nav class="nav"><a href="#">Games</a><a href="./release.html">Catalog</a><a href="#">Create</a><a href="#">Download</a><a href="#">Donate</a></nav><input class="search" type="search" placeholder="Search" aria-label="Search"><div class="account"><a href="./index.html">Sign Up</a><a href="./index.html?login=1">Login</a></div></div></header>
+  <a class="notice" href="#">Site “Updating” bug being fixed soon…</a>
+  <main><section class="not-found" aria-labelledby="notFoundTitle"><h1 id="notFoundTitle">404</h1><p>The page you are looking for could not be found.</p><a class="home-link" href="./home.html">Return to Qwelium</a></section></main>
+  <footer><nav class="footer-links"><a href="#">About Us</a><a href="#">Jobs</a><a href="#">Blog</a><a href="#">Privacy</a><a href="#">Help</a></nav>Qwelium is an independent game preservation project. Use of this site signifies your acceptance of the Terms and Conditions.</footer>
+</body>
+</html>
